@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="DK">
+<head>
+	<title>Høxbroe & Stik Op</title>
+	<meta name="Description" content="">
+	<meta name="Keywords" content="">
+	<link rel="icon" type="image/jpeg/png" href="assets/icons/logo.png">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/video.css">
+
+
+</head>
+<body>
+	<script>
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+            document.getElementById("video").style.width = "1200px";
+            document.getElementById("video").style.left = "calc(50% - 600px)";
+            if (document.body.scrollTop > 550 || document.documentElement.scrollTop > 550) {
+                document.getElementById("video").pause();
+                document.getElementById("play-icon").src = 'assets/icons/play.png';
+                document.getElementById("play-icon").classList.remove("playing");
+                document.getElementById("logo-wrapper").classList.remove("play-rev");
+                document.getElementById("logo-wrapper").style.top = "-200px";
+            }
+        } else {
+            document.getElementById("video").style.width = "100vw";
+            document.getElementById("video").style.left = "0";
+
+            document.getElementById("logo-wrapper").style.top = "0";
+        }
+    }
+</script>
+<script>
+    window.onload = function() {
+
+        // Video
+        var video = document.getElementById("video");
+
+        // Buttons
+        var playButton = document.getElementById("play-pause");
+        var playIcon = document.getElementById("play-icon");
+        var muteButton = document.getElementById("mute");
+        //wrapper
+        var wrap = document.getElementById("logo-wrapper");
+        // Event listener for the play/pause button
+
+
+        playIcon.addEventListener("click", function() {
+            if (video.paused == true) {
+                // Play the video
+                video.play();
+
+                // Update the button text to 'Pause'
+
+                playIcon.src = 'assets/icons/pause.png';
+                playIcon.classList.add("playing");
+                wrap.classList.add("play-rev");
+            } else {
+                // Pause the video
+                video.pause();
+
+                // Update the button text to 'Play'
+
+                playIcon.src = 'assets/icons/play.png';
+                playIcon.classList.remove("playing");
+                wrap.classList.remove("play-rev");
+            }
+        });
+    }
+</script>
+	<!-- Video player -->
+	        <div id="logo-wrapper" class="">
+            <img id="play-icon" src="assets/icons/play.png" alt="logo" onclick="" class="">
+        </div>
+
+
+    
+        <div id="video-container">
+		<!-- Video -->
+		<video id="video" width="640" height="365" class="">
+		  <source src="videos/mikethefrog.webm" type="video/webm">
+		  <source src="videos/mikethefrog.ogv" type="video/ogv">
+		  <source src="videos/mikethefrog.mp4" type="video/mp4">
+		  <p>
+		    Din browser understøtter ikke HTML5 video.
+		    <a href="videos/mikethefrog.mp4">Download</a> filmen istedet.
+		  </p>
+		</video>
+	<main class="content border">
+		
+		<header>
+			<img class="logo" src="assets/img/logo.png" alt="logo">
+			<!-- -->
+			<!-- Video Controls -->
+			<nav>
+				<!-- Site controls/links -->
+				<a href="#kob">Køb EP Her</a>
+				<a href="#events">Events</a>
+				<a href="#contact">Kontakt</a>
+				<!-- Outer Links -->
+				<a href="#facebook"><img class="social-logo" src="assets/img/facebook.png" alt="facebook"></a>
+				<a href="#spotify"><img class="social-logo" src="assets/img/spotify.png" alt="spotify"></a>
+				<a href="#itunes"><img class="social-logo" src="assets/img/itunes.png" alt="itunes"></a>
+				<a href="#instagram"><img class="social-logo" src="assets/img/instagram.png" alt="instagram"></a>
+				<a href="#youtube"><img class="social-logo" src="assets/img/youtube.png" alt="youtube"></a>
+
+			</nav>
+		</header>
+
+		<section id="info-section">
+			<h3>10 års jubilæum</h3>
+        	<p>Høxbroe & Stik op er to kunstnere der udfolder sig på hver deres måde. Sammen former de Bandet “Høxbroe & Stik op” som laver beatpoesi, der er en side-genre til rap-miljøet og en opgradering af digte og poesi som sammensluttes til en række numre fyldt med metaforer, digte og dertil rap om hverdagens virken.</p>
+        	<h3>Rap & Digte</h3>
+        	<p>Høxbroe & Stik op lancerer deres næste EP som et 10 år jubilæums EP efter at have haft et godt samarbejde siden 2009 hvor de stiftede deres band sammen. 
+Gennem årene har både Høxbroe og Stik Op lavet musik hver for sig samt på kryds og tværs af hinanden, men levere op til flere album og EP’er sammen, hvor de udfolder deres poesi gennem rap-genren.</p>
+		</section>
+
+		<section id="social-section">
+			<article id="event-article">
+				
+			</article>
+			
+			<article id="facebook-posts">
+				
+			</article>
+		</section>
+
+		<section id="contact-section">
+			
+		</section>
+</main>
+
+</body>
+</html>
